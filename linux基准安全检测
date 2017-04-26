@@ -1,0 +1,93 @@
+lynis是一个unix的基准安全检测，可以检测boot、用户及用户组、内存和进程、文件系统等等各个方面，检测完成之后，会输出检测报告：问题点和修复意见。软件下载地址https://cisofy.com/download/lynis/。
+安装：
+直接下载然后解压缩，到其目录下，执行:sudo ./lynis --man，来查看lynis的使用方法，其用法如下：
+OPTIONS
+       --auditor <full name>
+              Define  the  name of the auditor/pen-tester. When a full name is
+              used, add double quotes, like "Your Name".
+
+       --checkall (or -c)
+              Lynis performs a full check of  the  system,  printing  out  the
+              results  of  each test to stdout. Additional information will be
+              saved into a log  file  (default  is  /var/log/lynis.log).  This
+              option invokes scan mode "audit system".
+
+              In  case  the  outcome  of a scan needs to be automated, use the
+              report file.
+
+       --config
+              Show which settings file or profile is being used, then quit.
+
+       --cronjob
+              Perform automatic scan with cron safe  options  (no  colors,  no
+              questions, no breaks).
+
+       --debug
+              Display  debug  information  to  screen for troubleshooting pur-
+              poses.
+
+       --developer
+              Display developer information when creating tests.
+
+       --dump-options
+              Show all available parameters.
+
+       --logfile </path/to/logfile>
+              Defines location and  name  of  log  file,  instead  of  default
+              /var/log/lynis.log.
+
+       --no-colors
+              Do not use colors for messages, warnings and sections.
+
+       --no-log
+              Redirect all logging information to /dev/null, prevent sensitive
+              information to be written to disk.
+
+       --pentest
+              Run a non-privileged scan, usually for penetration testing. Some
+              of the tests will be skipped if they require root permissions.
+
+       --plugin-dir </path/to/plugins>
+              Define location where plugins can be found.
+
+       --profile <file>
+              Provide alternative profile to perform the scan.
+
+       --quick (-Q)
+              Do a quick scan (don't wait for user input).
+
+       --quiet (-q)
+              Run  quietly  and  do not show anything to the screen. Will also
+              enable quick mode.
+
+       --report-file <file>
+              Provide an alternative name for report file.
+
+       --reverse-colors
+              Optimize screen output for light backgrounds.
+
+       --skip-plugins
+              Do not run plugins.
+
+       --tests TEST-IDs
+              Only run the specific test(s). When using  multiple  tests,  add
+              quotes around the line.
+
+       --tests-from-group <group>
+              Only  perform  tests  from  particular group of tests. Use 'show
+              groups' to determine valid options.
+
+       --upload
+              Upload data to Lynis Enterprise server.
+
+       --wait Wait for user to continue. This adds a break after each  section
+              (opposed of --quick).
+
+       --warnings-only
+              Run quietly, except warnings.
+
+              Multiple parameters are allowed, though some parameters can only
+              be used together with others. When  running  Lynis  without  any
+              parameters, help will be shown and the program will exit.
+
+可以通过命令：sudo ./lynis -c -Q　进行快速的ｕｎｉｘ系统的安全检测。
